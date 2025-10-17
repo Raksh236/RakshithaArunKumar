@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Your Name · Data Engineer</title>
+  <meta name="description" content="Data engineer portfolio: pipelines, warehousing, streaming, cloud." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #0b1020;
+      --card: #121935;
+      --text: #e6e9f5;
+      --muted: #a6add3;
+      --accent: #7aa2ff;
+      --accent-2: #5ce1e6;
+      --ring: rgba(122,162,255,.25);
+    }
+    * { box-sizing: border-box; }
+    html, body { margin:0; padding:0; background:var(--bg); color:var(--text); font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji"; }
+    a { color: var(--accent); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 32px 20px 80px; }
+    header { display:flex; gap:18px; align-items:center; justify-content:space-between; flex-wrap:wrap; }
+    .brand { display:flex; gap:14px; align-items:center; }
+    .avatar { width:56px; height:56px; border-radius:50%; border:2px solid var(--accent); background:#0e1736 url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat; }
+    h1 { font-size: clamp(24px, 4vw, 36px); margin:0; letter-spacing:.2px; }
+    .sub { color: var(--muted); margin-top:4px; font-size: 14px; }
+    nav { display:flex; gap:14px; flex-wrap:wrap; }
+    .btn { background: linear-gradient(135deg, var(--accent), var(--accent-2)); color:#04122e; font-weight:700; padding:10px 14px; border-radius:12px; box-shadow: 0 6px 20px var(--ring); border:none; }
+    .btn:hover { transform: translateY(-1px); }
+
+    .grid { margin-top: 28px; display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; }
+    .card { background: linear-gradient(180deg, rgba(255,255,255,.04), rgba(255,255,255,.02)); border:1px solid rgba(255,255,255,.08); border-radius:16px; padding:18px; box-shadow: 0 1px 0 rgba(255,255,255,.06) inset; }
+    .card h3 { margin:4px 0 10px; font-size: 18px; }
+    .card p { margin:0 0 12px; color: var(--muted); font-size: 14px; line-height:1.5; }
+    .tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .tag { font-size:12px; padding:6px 8px; border-radius:999px; background:rgba(122,162,255,.12); color:#cddbff; border:1px solid rgba(122,162,255,.25); }
+    .kpis { display:flex; gap:10px; flex-wrap:wrap; margin-top:8px; }
+    .kpi { font-size:12px; padding:6px 8px; border-radius:10px; background:#0c1632; border:1px solid rgba(255,255,255,.08); color:#cfe7ff; }
+    .muted { color: var(--muted); }
+
+    .section { margin-top: 40px; }
+    .section h2 { margin:0 0 12px; font-size: 22px; }
+
+    .list { display:grid; gap:10px; }
+    .item { display:flex; align-items:flex-start; gap:12px; padding:12px; border-radius:12px; background: rgba(255,255,255,.03); border:1px solid rgba(255,255,255,.06); }
+    .bullet { width:8px; height:8px; border-radius:50%; background: var(--accent-2); margin-top:8px; }
+
+    footer { margin-top: 48px; display:flex; justify-content:space-between; gap:10px; align-items:center; flex-wrap:wrap; color: var(--muted); font-size: 14px; }
+    .links { display:flex; gap:12px; flex-wrap:wrap; }
+
+    /* Responsive tweaks */
+    @media (max-width:480px){ nav { width:100%; justify-content:flex-start; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="avatar" aria-hidden></div>
+        <div>
+          <h1>Your Name</h1>
+          <div class="sub">Data Engineer · Building reliable data platforms (Python · SQL · Airflow · dbt · Spark · AWS/GCP)</div>
+        </div>
+      </div>
+      <nav>
+        <a class="btn" href="#projects">Projects</a>
+        <a class="btn" href="#about">About</a>
+        <a class="btn" href="mailto:you@example.com">Contact</a>
+        <a class="btn" href="https://www.linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
+      </nav>
+    </header>
+
+    <section id="projects" class="section">
+      <h2>Featured Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Airflow ETL: NYC Taxi → Postgres</h3>
+          <p>Scheduled pipeline that ingests NYC Taxi data from S3, validates with Great Expectations, and models into star schema for BI.</p>
+          <div class="tags">
+            <span class="tag">Python</span><span class="tag">Airflow</span><span class="tag">Great Expectations</span><span class="tag">PostgreSQL</span>
+          </div>
+          <div class="kpis">
+            <div class="kpi">🕒 15m DAG runtime</div>
+            <div class="kpi">🧪 24 tests</div>
+            <div class="kpi">📦 7 dbt models</div>
+          </div>
+          <p class="muted"><a href="https://github.com/yourusername/airflow-nyc-taxi" target="_blank" rel="noopener">Repo</a> · <a href="#" target="_blank" rel="noopener">Architecture</a></p>
+        </article>
+
+        <article class="card">
+          <h3>Kafka → Spark Streaming: Clickstream</h3>
+          <p>Real-time enrichment of web events with sessionization and device heuristics; publishes aggregates to Redshift for dashboards.</p>
+          <div class="tags"><span class="tag">Kafka</span><span class="tag">Spark</span><span class="tag">AWS</span><span class="tag">Redshift</span></div>
+          <div class="kpis"><div class="kpi">⚡ 50k msgs/s</div><div class="kpi">⏱️ p95 < 1.2s</div></div>
+          <p class="muted"><a href="https://github.com/yourusername/clickstream-rt" target="_blank" rel="noopener">Repo</a></p>
+        </article>
+
+        <article class="card">
+          <h3>dbt Warehouse: Analytics Mart</h3>
+          <p>Modular dbt project with sources, staging, and marts; CI checks + docs site; snapshots for SCD2 on customers and orders.</p>
+          <div class="tags"><span class="tag">dbt</span><span class="tag">BigQuery</span><span class="tag">CI/CD</span></div>
+          <div class="kpis"><div class="kpi">✅ 100% tests passing</div><div class="kpi">📊 35 models</div></div>
+          <p class="muted"><a href="https://github.com/yourusername/dbt-analytics" target="_blank" rel="noopener">Repo</a> · <a href="#" target="_blank" rel="noopener">Docs</a></p>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <h2>About</h2>
+      <div class="list">
+        <div class="item"><div class="bullet"></div><div>5+ years designing data pipelines and warehouse models across finance & SaaS.</div></div>
+        <div class="item"><div class="bullet"></div><div>Comfortable with Python, SQL, Bash; Airflow, dbt; Spark; AWS/GCP; Docker; Terraform; CI/CD.</div></div>
+        <div class="item"><div class="bullet"></div><div>Focus on reliability: testing (unit + data), observability, cost optimization.</div></div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> Your Name</div>
+      <div class="links">
+        <a href="https://github.com/yourusername" target="_blank" rel="noopener">GitHub</a>
+        <span>·</span>
+        <a href="mailto:you@example.com">you@example.com</a>
+      </div>
+    </footer>
+  </div>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
